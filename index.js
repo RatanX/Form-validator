@@ -10,7 +10,12 @@ form.addEventListener("submit",(e) => {
         let isValid = true;
 
         const emailPattern = /^[a-zA-Z0-9.+%_-]+@[a-z0-9.-]+\.[a-z]{2,4}$/
-                           
+          if(!email.value) {
+          return  emailErr.textContent = "Enter email"
+          }    
+            if(!password.value) {
+           return emailErr.textContent = "Enter password"
+          }              
 
         // Email validation
         if (!emailPattern.test(email.value)) {
@@ -23,4 +28,5 @@ form.addEventListener("submit",(e) => {
             isValid=false
             console.log("password")
         }
+        
 })
